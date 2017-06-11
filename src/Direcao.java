@@ -1,4 +1,5 @@
 /**
+ * Anielly.
  * Uma estimativa de uma direção, com confiança.
  */
 public class Direcao extends Estimativa {
@@ -37,19 +38,22 @@ public class Direcao extends Estimativa {
     }
     
     /**
-     * Gets the confidence value of the estimate for the given time step.
+     * Calcula o valor de confiança em um determinado ciclo.
      * 
      * @param ciclo o intervalo de tempo para estimar a confiança.
      * @return Uma medida da confiança no valor direção.
      */
     public double getConfianca(int ciclo) {
-        if (this.mantemConfiancaParaSempre()) {
-            return confiancaInicial;
+        if( cicloDaEstimativa == -1 )       
+            return 0.0;
+        double dConf = confiancaInicial;
+        int dif      = (ciclo - cicloDaEstimativa);
+        for (int i = 0; i < dif ; i++) {
+            dConf *= 0.99;
         }
-        else {
-            double confianca = (5 * this.confiancaInicial) / (5 + Math.abs(ciclo - this.cicloDaEstimativa)); 
-            return confianca;
-        }
+        if( dConf > 1.0 )
+            return 0.0;
+        return dConf;
     }
     
     public double getDirection() {
@@ -72,7 +76,7 @@ public class Direcao extends Estimativa {
     }
     
     /**
-     * Updates an estimate with new direcao and confidence.
+     * Atualiza direção com novo valor de confiança
      * 
      * @param direcao valor da nova direcao
      * @param confianca um valor da confiança

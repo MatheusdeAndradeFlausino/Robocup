@@ -1,14 +1,13 @@
-
 /**
  * Representação de um jogador no campo.
  */
-public class Jogador extends MobileObject {
+public class Jogador extends ObjetoMovel {
     public Brain cerebro = null;
     public Cliente cliente = null;
     public int numero;
     public boolean goleiro;
-    public Team outroTime = new Team();
-    public Team time = new Team();
+    public Time outroTime = new Time();
+    public Time time = new Time();
 
     /**
      * Construtor padrão, constrói um jogador sem dados de lógica central ou

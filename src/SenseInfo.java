@@ -1,13 +1,3 @@
-/** @file SenseInfo.java
- * Represents the information encoded in a `sense_body` message.
- * 
- * @author Team F(utility)
- */ 
-
-
-/**
- *  Encapsulates information from `sense_body` messages from the server.
- */
 public class SenseInfo extends Info {
 
 	double stamina;
@@ -20,9 +10,6 @@ public class SenseInfo extends Info {
 	String viewQuality;
 	String viewWidth;
 	
-	/**
-	 * Resets this object's data.
-	 */
 	@Override
 	public void reset() {
 		super.reset();
@@ -37,11 +24,6 @@ public class SenseInfo extends Info {
 		viewWidth = null;
 	}
 	
-	/**
-	 * Copies this info to another sense info.
-	 * 
-	 * @param info the sense info to copy to
-	 */
 	public void copy(SenseInfo info){
 		info.time = time;
 		info.stamina = stamina;

@@ -1,14 +1,3 @@
-/** @file SeeInfo.java
- * Represents the information encoded in a `see` message.
- * 
- * @author Team F(utility)
- */ 
-
-
-
-/**
- * Encapsulates the data received in a `see` message.
- */
 public class SeeInfo extends Info{
     
     double distance;
@@ -20,17 +9,11 @@ public class SeeInfo extends Info{
     double pointingDir;
     boolean tackling;
     boolean kicking;
-    
-    /**
-     * Primary constructor.
-     */
+
     public SeeInfo() {
     	super();
     }
-    
-    /**
-     * Resets this object.
-     */
+
     @Override
     public void reset() {
     	super.reset();
@@ -45,11 +28,6 @@ public class SeeInfo extends Info{
         this.kicking = false;
     }
     
-    /**
-     * Copies another see info.
-     * 
-     * @param info to copy
-     */
     public void copy(SeeInfo info){
     	info.time = time;
     	info.distance = distance;

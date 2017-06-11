@@ -1,37 +1,22 @@
 
-/**
- * @file ServerParams_Player.java Encapsulates all server parameter constants
- * related to player objects in a way that allows redefinition in the future
- * through object initialization.
- *
- * @author Team F(utility)
- */
-/**
- * @class ServerParams_Player Encapsulates constant parameters related to the
- * player. Allows for redefinition through server parameter messages.
- */
-public class ServerParams_Player {
-
-    // Player speed
+public class ConfiguracoesJogador {
+    //Informações obtidas do manual Robocup a respeito dos jogadores
     public final double PLAYER_ACCEL_MAX;
     public final double PLAYER_SPEED_MAX;
     public final double PLAYER_SPEED_MAX_DELTA_MIN;
     public final double PLAYER_SPEED_MAX_DELTA_MAX;
     public final double PLAYER_DECAY;
 
-    // Other Player Parameters
     public final double PLAYER_SIZE;
     public final double PLAYER_WEIGHT;
     public final double KICKABLE_MARGIN;
 
-    // Dash Angle / Power
     public final double DASH_POWER_MIN;
     public final double DASH_POWER_MAX;
     public final double DASH_ANGLE_MIN;
     public final double DASH_ANGLE_MAX;
     public final double DASH_POWER_RATE;
 
-    // Kick Angle / Power
     public final double MOMENT_MAX;
     public final double MOMENT_MIN;
     public final double POWER_MAX;
@@ -39,7 +24,6 @@ public class ServerParams_Player {
     public final double KICK_POWER_RATE;
     public final double PLAYER_WHEN_TO_KICK;
 
-    // Stamina
     public final double STAMINA_CAPACITY;
     public final double STAMINA_INC_MAX;
     public final double STAMINA_MAX;
@@ -52,17 +36,14 @@ public class ServerParams_Player {
     public final double D_EFFORT_INC;
     public final double D_EFFORT_MIN;
 
-    // Neck Angle / Moment
     public final double NECK_ANGLE_MIN;
     public final double NECK_ANGLE_MAX;
     public final double NECK_MOMENT_MIN;
     public final double NECK_MOMENT_MAX;
 
-    //Catchable
     public final double CATCHABLE_AREA_W;
     public final double CATCHABLE_AREA_L;
-    
-    //Turn
+
     public final double TURN_MAX_MOMENT;
     public final double TURN_MIN_MOMENT;
 
@@ -72,7 +53,7 @@ public class ServerParams_Player {
      * Default Constructor; builds a Params_Ball data stamp based on the values
      * in the Builder subclass.
      */
-    public ServerParams_Player() {
+    public ConfiguracoesJogador() {
         PLAYER_ACCEL_MAX = Builder.PLAYER_ACCEL_MAX;
         PLAYER_SPEED_MAX = Builder.PLAYER_SPEED_MAX;
         PLAYER_SPEED_MAX_DELTA_MIN = Builder.PLAYER_SPEED_MAX_DELTA_MIN;

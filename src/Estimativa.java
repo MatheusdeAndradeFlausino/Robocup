@@ -15,7 +15,7 @@ public class Estimativa {
     }
     
     /**
-     * Retorna a confiança para sempre.
+     * Retorna true se a confiança é para sempre.
      * Por convenção, quando o cicloDaEstimativa < 0.
      * 
      * @return estimativa mantém sua confiança para sempre.

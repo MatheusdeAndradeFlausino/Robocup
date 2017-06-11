@@ -5,9 +5,6 @@ import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 
-/**
- * Classe responsável por manuzear a conexão UDP com o RoboCup 2D soccer server.
- */
 public class Cliente {
 
    
@@ -29,7 +26,6 @@ public class Cliente {
                 if (args[i].equals("-g")) {          
                     this.player.goleiro = true;
                 }
-
                 if (args[i].equals("-t") || args[i].equals("--team")) {
                     this.player.time.nome = args[i + 1];
                 }
@@ -58,10 +54,10 @@ public class Cliente {
          */
         String version = String.format("(version %s)", Configuracoes.SOCCER_SERVER_VERSION);
         if (!this.player.goleiro) {
-            enviaComando(Configuracoes.Commands.INIT, player.time.nome, version);
+            enviaComando(Configuracoes.Comandos.INIT, player.time.nome, version);
             player.goleiro = false;
         } else {
-            enviaComando(Configuracoes.Commands.INIT, player.time.nome, version, "(goalie)");
+            enviaComando(Configuracoes.Comandos.INIT, player.time.nome, version, "(goalie)");
             player.goleiro = true;
         }
         // Começa a leitura do INIT no servidor 
@@ -81,7 +77,7 @@ public class Cliente {
      * Disconecta o cliente do servidor.
      */
     public final void fecharConexao() {
-        enviaComando(Configuracoes.Commands.BYE);
+        enviaComando(Configuracoes.Comandos.BYE);
         soccerServerSocket.close();
     }
 
